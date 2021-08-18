@@ -8,7 +8,7 @@
     $statement = $db->prepare($query);
     $statement->execute();
     $courses = $statement->fetchAll();
-    $statement ->closeCursor();
+    $statement->closeCursor();
     return $courses;
   }
 
@@ -23,7 +23,7 @@
     $statement->bindValue(':courseID', $course_id);
     $statement->execute();
     $course = $statement->fetch();
-    $statement ->closeCursor();
+    $statement->closeCursor();
     $course_name = $course['course_name'];
     return $course_name;
   }
@@ -35,7 +35,7 @@
     $statement = $db->prepare($query);
     $statement->bindValue(':courseID', $course_id);
     $statement->execute();
-    $statement ->closeCursor();
+    $statement->closeCursor();
   }
 
   // CREATE New Course
@@ -46,5 +46,5 @@
     $statement = $db->prepare($query);
     $statement->bindValue(':course_name', $course_name);
     $statement->execute();
-    $statement ->closeCursor();
+    $statement->closeCursor();
   }
